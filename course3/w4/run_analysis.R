@@ -42,3 +42,4 @@ select(train_test, matches("(mean[()]|std[()])"))
 # A tibble: 180 x 563
 # Groups:   label [6]
 grouped_avg <- train_test %>% group_by(label, subject) %>% summarise_all(mean)
+write.table(x=apply(grouped_avg,2,unlist), row.names=F, file="./grouped_avg.txt")

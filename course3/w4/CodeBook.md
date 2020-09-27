@@ -10,6 +10,7 @@
 7. 'subjecttrain' - 7352 rows with 1 column
 8. 'subjecttest' - 2947 rows with 1 column
 9. 'train_test' - a combination of train/test data sets
+10. 'mean_std' - a data frame with subject/label/mean/std selected from the train_test data set
 10. 'grouped_avg' - grouping of activity / subject and then summarised all with a mean func
 
 

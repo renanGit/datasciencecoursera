@@ -32,14 +32,14 @@ train_test$label <- lapply(train_test$label, function(v){ activityname[v, 2] })
 
 
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
-select(train_test, matches("(mean[()]|std[()])"))
+mean_std <- select(train_test, matches("(subject|label|mean[()]|std[()])"))
 # See the dimension of the regex - 66 columns out of 561
 # dim(xfeatures[grepl("(mean[()]|std[()])", xfeatures[, 2]), ])
 
 
 # 5. From the data set in step 4, creates a second, independent tidy data set
 #    with the average of each variable for each activity and each subject.
-# A tibble: 180 x 563
+# A tibble: 180 x 74
 # Groups:   label [6]
-grouped_avg <- train_test %>% group_by(label, subject) %>% summarise_all(mean)
+grouped_avg <- mean_std %>% group_by(label, subject) %>% summarise_all(mean)
 write.table(x=apply(grouped_avg,2,unlist), row.names=F, file="./grouped_avg.txt")

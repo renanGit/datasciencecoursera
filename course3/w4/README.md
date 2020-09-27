@@ -1,7 +1,7 @@
 ## Repo Week 4 Course 3, Getting and Cleaning Data Course Project
 
 # Course Project Details
-This project groups the train / test data set and extracts the columns with mean / std from the data set which then groups by the activity and subject to perform a mean.
+This project groups the train / test data set and extracts the columns with mean / std from the data set which then groups by the activity and subject to perform a mean. The output of the tidy data set will now have groups of 6 for the 30 subjects (1-30).
 
 # Directory Struct
 - 'assignment_4.R' : Related to the quiz only
